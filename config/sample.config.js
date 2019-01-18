@@ -6,10 +6,16 @@ module.exports = {
     "command":["/start","/monitor"],
     "server":[
         {
-            "name": "",
-            "slug":"", //must unique, use underscore for separate
-            "host":"",
-            "port":""
-        }
+            "name": "My Local",
+            "slug":"my_local", //must unique, use underscore for separate
+            "host":"127.0.0.1",
+            "port":"3600"
+        },
+        // {
+        //     "name":"",
+        //     "slug":"",
+        //     "host":"",
+        //     "port":""
+        // },
     ]
 }
