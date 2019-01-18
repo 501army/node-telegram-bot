@@ -71,6 +71,7 @@ bot.on('callback_query', function onCallbackQuery(server_choosen) {
             let result = JSON.parse(body)
             result = result.data
             let data = ''
+            data += "Server : "+ server.name +"\n\n"
             data += "Platform: "+ result.platform + "\n"
             data += "Number of CPUs: " +result.num_cpu + "\n"
             data += "CPU Usage (%) : " + result.cpu_usage + "\n"
@@ -78,7 +79,13 @@ bot.on('callback_query', function onCallbackQuery(server_choosen) {
             data += "Free Memory: " + result.free_mem + "\n"
             data += "Free Memory (%): " + result.free_mem_percent + "\n"
             data += "System Uptime: " + result.uptime + "\n"
-            bot.sendMessage(server_choosen.message.chat.id, data,{parse_mode: "HTML"})
+            let opts = {
+                chat_id: server_choosen.message.chat.id,
+                message_id: server_choosen.message.message_id,
+                parse_mode: "HTML"
+            }
+            bot.editMessageText(data, opts);
+            // bot.sendMessage(server_choosen.message.chat.id, data,{})
         })
     })
 })
