@@ -91,6 +91,4 @@ bot.on('callback_query', function onCallbackQuery(server_choosen) {
 })
 
 app.use(bodyParser.json())
-app.listen(config.port, function () {
-    console.log('app listening at port %s', config.port)
-})
+console.log('Telegram Bot server is running')
